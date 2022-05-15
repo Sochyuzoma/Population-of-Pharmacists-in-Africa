@@ -1,0 +1,18 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(r'C:\Users\SOCHY\Downloads\healthworkersafrica.csv')
+df
+
+pharm_df = df.loc[(df['Lvl1_name']=='Pharmacists') & (df['Year'] == 2018)]
+pharm_df
+
+ # Impot the relevant module
+
+fig, ax = plt.subplots() # Create the figure and axes object
+
+# Plot the first x and y axes:
+pharm_df.plot(kind = 'bar', x = 'Country', y = 'Value', ax = ax , figsize = (15,7)) 
+plt.title("Population of Pharmacists in Africa 2018")
+plt.ylabel("Population")
